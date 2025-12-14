@@ -1,0 +1,269 @@
+/*DEFAULT RESET*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*CREATING A ROOT FOR COMMON VARIABLES*/
+:root{
+  padding: 16px;
+  --box-shadow:0px 4px 12px 0px rgba(0, 0, 0, 0.4);
+}
+
+/*BODY STARTS FOR HERE*/
+body{
+  background: #18181b;
+  min-height: 95vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/*HEADER*/
+.app-header {
+  text-align: center;
+  margin: 2rem 0 1.5rem;
+}
+
+.app-header h1 {
+  color: #f9fafb;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.app-header p {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+}
+
+/*TASK INPUT BAR AND ADD BUTTON*/
+
+/*INPUT CONTAINER*/
+#inputWrapper{
+  max-width: 700px;
+  padding: 10px;
+  width: 100%;
+  background:none;
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  border: none;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+#inputWrapper:hover{
+  transform:scale(1.05);
+}
+
+/*INPUT BAR*/
+#taskInput{
+  flex: 1;
+  padding: 30px;
+  border-radius: 16px;
+  border: none;
+  background:ghostwhite;
+  font-size: 18px;
+  color: black;
+  outline: 0;
+  margin: 0;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+}
+
+::placeholder{
+  color: grey;
+}
+
+/*ADD BUTTON*/
+#submitButton{
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  position: absolute;
+  padding: 1rem;
+  border-radius: 36px;
+  background:yellowgreen;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 400;
+  backdrop-filter: blur(8px), brightness(100%);
+  border: none;
+}
+
+
+#task-counter-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  max-width: 300px;
+  margin:0 auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px), brightness(30%), contrast(20%);
+}
+
+#task-counter-container p{
+  color: rgb(243, 133, 43);
+  text-align: center;
+  font-weight: 500;
+  padding: 0.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/*TASK CONTAINER AND LIST ITEMS*/
+
+/*TASK CONTAINER*/
+#taskContainer{
+  padding: 20px;
+  margin-top: 20px;
+  background: ghostwhite;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(8px);
+}
+
+/*TASK LIST*/
+#taskList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 12px;
+  margin-top: 12px; 
+  border-radius: 16px;
+  color: black;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  transition: transform 0.18s ease;
+  transform: translateY(0);
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+#taskList li:hover{
+  transform: translateY(-5px) scale(1.05);
+}
+
+/*BUTTONS AND BUTTON-ICONS , CREATED USING JAVASCRIPT*/
+
+/*BUTTON GROUP - EDIT AND DELETE BUTTON*/
+.buttonGroup{
+  display: flex;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  align-items: center;
+  cursor: pointer;
+  
+}
+
+/*DELETE AND EDIT BUTTONS*/
+.delete-btn, .edit-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  outline: none;
+  border:none;
+  padding: 0;
+  width: 48px;
+  height: 48px;
+  transition: transform 0.18s ease;
+  transform: translateY(0);
+  cursor: pointer;
+}
+
+/*BUTTON ICONS*/
+.delete-icon, .edit-icon{
+  object-fit: contain;  
+  height: 28px;
+  width: 28px;
+
+}
+
+.delete-btn:hover, 
+.edit-btn:hover{
+  transform: translateY(-5px) scale(1.2);
+}
+
+/*SAVE BUTTON*/
+.save-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+
+  background: #2563eb;
+  color: white;
+
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background: #1d4ed8;
+}
+
+
+/*EDIT BOX CREATED USING JAVASCRIPT*/
+.edit-box{
+  height: 40px;
+  font-size: 18px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+  overflow: hidden;
+  border-radius: 8px;
+  text-indent: 8px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.edit-box:focus,
+#taskInput:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.3);
+}
+
+
+/*FOOTER*/
+footer {
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+#footerDiv {
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.footer-main {
+  color: #e5e7eb;
+  font-weight: 500;
+}
+
+.footer-sub {
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+  
+
+
+
+
